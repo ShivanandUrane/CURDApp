@@ -1,0 +1,35 @@
+
+
+
+<div class="container">
+  <div>
+    <h2>Search</h2>
+    <input type="text" [(ngModel)]="usersearch"> <br><br>
+  </div>
+
+   <div>
+      <table class="table table-border">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Option</th>
+        </tr>
+
+        <tr *ngFor="let item of data | spipe : usersearch ">
+         <td>{{item.id}}</td>
+         <td>{{item.name}}</td>
+         <td>{{item.salary}}</td>
+         <td>{{item.email}}</td>
+         <td>{{item.age}}</td>
+         <td>
+           <button class="btn btn-primary" (click)="onView(item.id)">View</button> &nbsp;
+            <button class="btn btn-primary" (click)="onDelete(item.id)">Delete</button> &nbsp;
+            <button class="btn btn-primary" (click)="onUpdate(item.id)">Update</button>
+        </td>
+        </tr>
+      </table>
+   </div>
+</div>

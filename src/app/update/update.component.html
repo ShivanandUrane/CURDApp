@@ -1,0 +1,45 @@
+
+
+<div class="container">
+   <div *ngFor="let item of data">
+      <div *ngIf="item.id==selectedid">
+         <form #userForm="ngForm">
+             <div class="form-group">
+                <h2>Id</h2>
+                <input type="number" #idRef="ngModel" class="form-control" name="id" [ngModel]="item.id" ngModel>
+             </div>
+
+             <div class="form-group">
+                    <h2>Name</h2>
+                    <input type="text" #nameRef="ngModel" class="form-control" name="name" [ngModel]="item.name" ngModel>
+             </div>
+
+             <div class="form-group">
+                    <h2>Salary</h2>
+                    <input type="number" #salaryRef="ngModel" class="form-control" name="salary" [ngModel]="item.salary" ngModel>
+             </div>
+
+             <div class="form-group">
+                    <h2>Email</h2>
+                    <input type="email" #emailRef="ngModel" class="form-control" name="email" [ngModel]="item.email" ngModel>
+             </div>
+
+             <div class="form-group">
+                    <h2>Age</h2>
+                    <input type="number" #ageRef="ngModel" class="form-control" name="age" [ngModel]="item.age" ngModel>
+             </div>
+
+             <button class="btn btn-primary" (click)="onSaveUpdate(userForm.value)">Save Update</button> &nbsp;&nbsp;
+             <button class="btn btn-primary" (click)="onBack()">Back</button>
+         </form>
+      </div>
+   </div>
+   
+   <div *ngIf="updated==true">
+      <div class="alert alert-success">
+        <div class="text-message text-center">
+       <strong> Successfully</strong> Updated New Data !
+        </div>
+      </div>
+   </div>
+</div>

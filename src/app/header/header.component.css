@@ -1,0 +1,22 @@
+
+.Header {
+
+    overflow: hidden;
+    background-color: black;
+    padding: 30px 30px;
+
+}
+
+/* Styleing to the header*/
+
+ .Header a{
+
+    float: right;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size: 18px;
+    line-height:25px;
+    border-radius:4px;
+ }
+
